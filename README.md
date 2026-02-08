@@ -174,7 +174,7 @@ You will receive real‑time JSON updates from the Manager.
 
 ## 🧩 Architecture Overview
 
-
+```
 ┌──────────────┐
 │   Dashboard   │
 │ (WebSocket)   │
@@ -191,7 +191,7 @@ ws://robot1        ws://robot2
 │   Robot 1    │ │   Robot 2    │
 │ (Python WS)  │ │ (Python WS)  │
 └──────────────┘ └──────────────┘
-
+```
 
 
 ---
