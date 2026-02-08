@@ -1,3 +1,4 @@
+![Preview](images/preview.png)
 # Robot Fleet Manager (FastAPI + WebSocket)
 
 A modular, real-time robot fleet management system built with **FastAPI**, **WebSockets**, and a lightweight **HTML/JS dashboard**.  
