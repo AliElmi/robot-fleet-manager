@@ -26,7 +26,7 @@ The architecture is fully modular: Manager, Robots, and Dashboard can run on **d
 ---
 
 ## 📁 Project Structure
-
+```
 robot-fleet/
 │
 ├── manager/
@@ -46,42 +46,48 @@ robot-fleet/
 ├── robot2_run.bat
 │
 └── requirements.txt
-
+```
 
 ---
 
 ## 🔧 Installation
 
 Create and activate a virtual environment:
+```
 python -m venv venv
 venv\Scripts\activate
-
+```
 
 Install dependencies:
+```
 pip install -r requirements.txt
-
+```
 
 ---
 
 ## ▶️ Running the System
 
 ### 1) Start the Manager
+```
 manager_run.bat
-
+```
 
 Manager runs on:
-http://127.0.0.1:8000 (127.0.0.1 in Bing)
-
+```
+http://127.0.0.1:8000
+```
 
 ---
 
 ### 2) Start Robot 1
+```
 robot1_run.bat
-
+```
 
 ### 3) Start Robot 2
+```
 robot2_run.bat
-
+```
 
 Robots automatically reconnect if Manager restarts.
 
@@ -104,7 +110,7 @@ All HTTP and WebSocket endpoints require an API key.
 Example:
 ws://127.0.0.1:8000/ws/robot?robot_id=robot_1&key=MY_SECRET_KEY_123
 
-POST http://127.0.0.1:8000/reset?robot_id=robot_1&key=MY_SECRET_KEY_123 (127.0.0.1 in Bing)
+POST http://127.0.0.1:8000/reset?robot_id=robot_1&key=MY_SECRET_KEY_123
 
 
 
@@ -117,8 +123,9 @@ You can test all Manager API endpoints using Postman.
 ### 1) Assign a Task to a Robot
 
 **POST**
-http://127.0.0.1:8000/assign?robot_id=robot_1&key=MY_SECRET_KEY_123 (127.0.0.1 in Bing)
-
+```
+http://127.0.0.1:8000/assign?robot_id=robot_1&key=MY_SECRET_KEY_123
+```
 
 **Body (JSON):**
 ```json
@@ -128,7 +135,7 @@ http://127.0.0.1:8000/assign?robot_id=robot_1&key=MY_SECRET_KEY_123 (127.0.0.1 i
     "target": "A1"
   }
 }
-
+```
 2) Reset a Robot
 
 POST
