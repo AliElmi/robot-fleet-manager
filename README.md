@@ -29,6 +29,8 @@ The architecture is fully modular: Manager, Robots, and Dashboard can run on **d
 ```
 robot-fleet/
 │
+├── images/
+│
 ├── manager/
 │   ├── main.py
 │   ├── config.py
@@ -136,26 +138,33 @@ http://127.0.0.1:8000/assign?robot_id=robot_1&key=MY_SECRET_KEY_123
   }
 }
 ```
-2) Reset a Robot
+### 2) Reset a Robot
 
 POST
-
+```
 http://127.0.0.1:8000/reset?robot_id=robot_1&key=MY_SECRET_KEY_123
+```
 No body required.
 
-3) Get Status of All Robots
+### 3) Get Status of All Robots
 
-GET
+**GET**
+```
 http://127.0.0.1:8000/status?key=MY_SECRET_KEY_123
+```
 
-4) WebSocket Testing (Optional)
+### 4) WebSocket Testing (Optional)
 
 Postman also supports WebSocket testing.
 Robot WebSocket
+```
 ws://127.0.0.1:8000/ws/robot?robot_id=robot_1&key=MY_SECRET_KEY_123
+```
 
 Dashboard WebSocket
+```
 ws://127.0.0.1:8000/ws/dashboard?key=MY_SECRET_KEY_123
+```
 You will receive real‑time JSON updates from the Manager.
 
 ---
