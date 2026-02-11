@@ -40,13 +40,17 @@ async def robot_connection(ws: WebSocket):
             message = await ws.receive_text()
             print(f"Result from {robot_id}: {message}")
             data = json.loads(message) 
-            # اگر پیام reset_done بود 
+            # ------------------------- 
+            # RESET COMMAND HANDLING 
+            # -------------------------
             if "event" in data and data["event"] == "reset_done":
                 robot_status[robot_id]["status"] = "idle" 
                 robot_status[robot_id]["current_task"] = None 
                 continue
 
-            # اگر پیام نتیجهٔ task بود 
+            # ------------------------- 
+            # TASK RESULT RECEIVED 
+            # -------------------------
             if "task_id" in data: 
                 robot_status[robot_id]["status"] = "idle" 
                 robot_status[robot_id]["current_task"] = None 
