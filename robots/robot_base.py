@@ -37,7 +37,7 @@ class RobotBase:
                         await asyncio.sleep(1)
                         print(f"{self.robot_id} reset complete")
 
-                        # ارسال پیام reset_done
+                        # Send reset_done event
                         await ws.send(json.dumps({
                             "event": "reset_done"
                         }))
@@ -52,7 +52,7 @@ class RobotBase:
 
                         print(f"{self.robot_id} received task: {task}")
 
-                        # شبیه‌سازی انجام کار
+                        # Simulate task execution
                         await asyncio.sleep(2)
 
                         result = {
